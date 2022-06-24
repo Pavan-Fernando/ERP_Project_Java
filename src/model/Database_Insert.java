@@ -37,4 +37,17 @@ public class Database_Insert {
             e.printStackTrace();
         }
     }
+    
+    public void insert_new_customer(String name, String email, String phone) {
+
+        try {
+            statement = Database_Connection.get_Connection_Establish();
+            String Query = "INSERT INTO customer (name, email, phone) VALUES ('" + name + "', '" + email + "', '"+phone+"')";
+            statement.executeUpdate(Query);
+
+            Database_Connection.close_Connection();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

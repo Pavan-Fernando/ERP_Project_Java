@@ -22,8 +22,7 @@ public class Database_Connection {
             connnection = DriverManager.getConnection(url, "root", "");
             statement = connnection.createStatement();
             System.out.println("success");      
-            
-            
+                 
         } catch (Exception e) {
             
             e.printStackTrace();

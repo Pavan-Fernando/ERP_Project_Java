@@ -34,4 +34,9 @@ public class WarehouseController {
         }
         return check_available;
     }
+    
+    public void update_material_qty(String material_id, double qty){
+        
+        new model.Database_Update().update_material_qty(material_id, qty);
+    }
 }

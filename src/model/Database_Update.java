@@ -17,7 +17,7 @@ public class Database_Update {
          
         try {
             
-            String Query = "UPDATE rawmaterial SET stock_quantity='" + qty + "' WHERE material_id = '"+material_id+"'";
+            String Query = "UPDATE material SET stock_qty='" + qty + "' WHERE id = '"+material_id+"'";
             statement = Database_Connection.get_Connection_Establish();
             int result = statement.executeUpdate(Query);
             

@@ -114,7 +114,20 @@ public class Database_Search {
             statement = Database_Connection.get_Connection_Establish();
             result = statement.executeQuery(Query);
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
+        }
+        return result;
+    }
+    
+    public ResultSet material_id_loading() {
+
+        try {
+            String Query = "SELECT * FROM material";
+            statement = Database_Connection.get_Connection_Establish();
+            result = statement.executeQuery(Query);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return result;
     }

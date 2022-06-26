@@ -83,7 +83,7 @@ public class Production_Screen extends javax.swing.JFrame {
         });
 
         product_plan.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
-        product_plan.setText("Produc Plan");
+        product_plan.setText("Product Plan");
         product_plan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 product_planActionPerformed(evt);
@@ -145,25 +145,26 @@ public class Production_Screen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void new_materialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_materialActionPerformed
-        this.toBack();
-//        New_Order ord = new New_Order();
-//        ord.setVisible(true);
-//        ord.toFront();
+        this.dispose();
+        New_material new_material = new New_material();
+        new_material.setVisible(true);
+
     }//GEN-LAST:event_new_materialActionPerformed
 
     private void new_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_productActionPerformed
-        this.toBack();
-//        New_Customer cus = new New_Customer();
-//        cus.setVisible(true);
-//        cus.toFront();
+        this.dispose();
+
+        New_product new_product = new New_product();
+
+        new_product.setVisible(true);
     }//GEN-LAST:event_new_productActionPerformed
 
     private void product_planActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_product_planActionPerformed
-        
+
     }//GEN-LAST:event_product_planActionPerformed
 
     private void order_mrpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_order_mrpActionPerformed
-       
+
     }//GEN-LAST:event_order_mrpActionPerformed
 
     /**

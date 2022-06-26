@@ -10,6 +10,19 @@ public class Database_Insert {
 
     Statement statement;
 
+    public void insert_to_Order_material(String order_id, String material_id, String order_material_total_qty, String order_material_total_price) {
+        try {
+            statement = Database_Connection.get_Connection_Establish();
+            String sql = "INSERT INTO order_material_com (ord_id , material_id, material_qty, price) VALUES ('" + order_id + "', '" + material_id + "', '" + order_material_total_qty + "', '" + order_material_total_price + "')";
+            statement.executeUpdate(sql);
+            Database_Connection.close_Connection();
+        } catch (Exception e) {
+            System.out.println("error in order_rawmaterial");
+            System.out.println(e.toString());
+        }
+
+    }
+
     public void insert_new_order(String date, String customer_id) {
 
         try {

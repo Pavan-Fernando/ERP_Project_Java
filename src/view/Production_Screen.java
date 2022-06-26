@@ -160,11 +160,15 @@ public class Production_Screen extends javax.swing.JFrame {
     }//GEN-LAST:event_new_productActionPerformed
 
     private void product_planActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_product_planActionPerformed
-
+        this.dispose();
+        Product_plan_Frame product_plan_Frame = new Product_plan_Frame();
+        product_plan_Frame.setVisible(true);
     }//GEN-LAST:event_product_planActionPerformed
 
     private void order_mrpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_order_mrpActionPerformed
-
+        this.dispose();
+        Order_MRP_frame order_MRP_frame = new Order_MRP_frame();
+        order_MRP_frame.setVisible(true);
     }//GEN-LAST:event_order_mrpActionPerformed
 
     /**

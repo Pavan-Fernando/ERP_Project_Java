@@ -21,4 +21,7 @@ public class MRPController {
     public static void insert_Materials_to_product_table(String product_id, String material_id, String qty) {
         new model.Database_Insert().insert_Materials_to_product_table(product_id, material_id, qty);
     }
+        public static void insert_to_Order_material(String order_id, String material_id, String order_material_total_qty, String order_material_total_price) {
+        new model.Database_Insert().insert_to_Order_material(order_id, material_id, order_material_total_qty,order_material_total_price);
+    }
 }

@@ -1,14 +1,13 @@
-
 package model;
 
 import java.sql.Statement;
 
 /**
  *
- * @author 
+ * @author
  */
 public class Database_Insert {
-    
+
     Statement statement;
 
     public void insert_new_order(String date, String customer_id) {
@@ -23,7 +22,7 @@ public class Database_Insert {
             e.printStackTrace();
         }
     }
-    
+
     public void insert_order_product_com(String order_id, String product_id, String qty) {
 
         boolean isSuccess = false;
@@ -37,12 +36,12 @@ public class Database_Insert {
             e.printStackTrace();
         }
     }
-    
+
     public void insert_new_customer(String name, String email, String phone) {
 
         try {
             statement = Database_Connection.get_Connection_Establish();
-            String Query = "INSERT INTO customer (name, email, phone) VALUES ('" + name + "', '" + email + "', '"+phone+"')";
+            String Query = "INSERT INTO customer (name, email, phone) VALUES ('" + name + "', '" + email + "', '" + phone + "')";
             statement.executeUpdate(Query);
 
             Database_Connection.close_Connection();
@@ -50,8 +49,8 @@ public class Database_Insert {
             e.printStackTrace();
         }
     }
-    
-      public void insert_product(String product_name, String price) {
+
+    public void insert_product(String product_name, String price) {
 
         try {
             statement = Database_Connection.get_Connection_Establish();
@@ -63,7 +62,8 @@ public class Database_Insert {
             e.printStackTrace();
         }
     }
-        public void insert_Material(String material_name, String material_unit, String price_per_unit, String stock_quantity) {
+
+    public void insert_Material(String material_name, String material_unit, String price_per_unit, String stock_quantity) {
 
         try {
             statement = Database_Connection.get_Connection_Establish();
@@ -73,6 +73,17 @@ public class Database_Insert {
             Database_Connection.close_Connection();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void insert_Materials_to_product_table(String product_id, String material_id, String qty) {
+        try {
+            statement = Database_Connection.get_Connection_Establish();
+            String sql = "INSERT INTO product_materials_com (pdt_id, 	material_id, material_qty) VALUES ('" + product_id + "', '" + material_id + "', '" + qty + "')";
+            statement.executeUpdate(sql);
+            Database_Connection.close_Connection();
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
     }
 }

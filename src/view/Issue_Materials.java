@@ -159,6 +159,10 @@ public class Issue_Materials extends javax.swing.JFrame {
             ResultSet result = new Database_Search().find_material_id_and_name(this.order_id.getSelectedItem().toString());
             DefaultTableModel tModel = (DefaultTableModel)this.table.getModel();
 
+            while (tModel.getRowCount() > 0) {
+                tModel.removeRow(0);
+            }
+            
             while(result.next()){
                 String data[] = {result.getString(1), result.getString(3), result.getString(2)};
                 material[x][0] = result.getString(1);

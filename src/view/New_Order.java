@@ -197,7 +197,7 @@ public class New_Order extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
     }
     
@@ -211,7 +211,7 @@ public class New_Order extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
     }
     
@@ -227,7 +227,7 @@ public class New_Order extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)this.order_table.getModel();
             model.addRow(table_data);
             x++;
-            clearFields();
+            this.qty.setText("");
         }
     }//GEN-LAST:event_addActionPerformed
 
@@ -250,9 +250,6 @@ public class New_Order extends javax.swing.JFrame {
         }
     }
     
-    private void clearFields(){
-        this.qty.setText("");
-    }
     
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
 
@@ -266,10 +263,14 @@ public class New_Order extends javax.swing.JFrame {
                 }
             }
             JOptionPane.showMessageDialog(null, "Order is Inserted", "Sucessfull", JOptionPane.INFORMATION_MESSAGE);
-            clearFields();
+            this.qty.setText("");
             
+            DefaultTableModel model = (DefaultTableModel)this.order_table.getModel();
+            while (model.getRowCount() > 0) {
+                model.removeRow(0);
+            }
         } catch (Exception e) {
-            System.out.println(e.toString());
+           e.printStackTrace();
         }
     }//GEN-LAST:event_saveActionPerformed
 

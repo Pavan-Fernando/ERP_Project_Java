@@ -232,7 +232,7 @@ public class New_Order extends javax.swing.JFrame {
     }//GEN-LAST:event_addActionPerformed
 
     private void get_today_date(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
         Date date = new Date();  
         today_date = dateFormat.format(date);
     }

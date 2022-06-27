@@ -164,6 +164,9 @@ public class BOM extends javax.swing.JFrame {
             ResultSet result = new Database_Search().material_details_prices_and_order_details(this.order_id.getSelectedItem());
             DefaultTableModel model = (DefaultTableModel) this.bom_table.getModel();
             
+            while (model.getRowCount() > 0) {
+                model.removeRow(0);
+            }
             while (result.next()) {
                 String row[] = {result.getString(2), result.getString(3), result.getString(6),result.getString(7)};
                 model.addRow(row);

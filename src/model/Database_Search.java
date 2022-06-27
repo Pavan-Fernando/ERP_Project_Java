@@ -12,6 +12,19 @@ public class Database_Search {
     Statement statement;
     ResultSet result;
 
+    public ResultSet get_sell_product_qty(Object product_id, String month_start, String month_end) {
+        try {
+
+            String sql = "SELECT SUM(order_product_com.product_qty) FROM order_product_com INNER JOIN orders ON order_product_com.ord_id = orders.ord_id INNER JOIN product ON order_product_com.pdt_id= product.id WHERE order_product_com.pdt_id='" + product_id + "' AND orders.date BETWEEN '" + month_start + "' AND '" + month_end + "';";
+            statement = Database_Connection.get_Connection_Establish();
+
+            result = statement.executeQuery(sql);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        return result;
+    }
+
     public ResultSet get_Material_Details_According_to_OrderId(Object id) {
 
         try {

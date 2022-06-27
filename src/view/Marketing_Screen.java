@@ -106,17 +106,15 @@ public class Marketing_Screen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void moving_avgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moving_avgActionPerformed
-        this.toBack();
-        New_Order ord = new New_Order();
-        ord.setVisible(true);
-        ord.toFront();
+        this.dispose();
+        Moving_Average_frame moving_Average_frame = new Moving_Average_frame();
+        moving_Average_frame.setVisible(true);
     }//GEN-LAST:event_moving_avgActionPerformed
 
     private void weighted_moving_avgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weighted_moving_avgActionPerformed
-        this.toBack();
-        New_Customer cus = new New_Customer();
-        cus.setVisible(true);
-        cus.toFront();
+        this.dispose();
+        Weighted_moving_a_frame weighted_moving_a_frame = new Weighted_moving_a_frame();
+        weighted_moving_a_frame.setVisible(true);
     }//GEN-LAST:event_weighted_moving_avgActionPerformed
 
     /**

@@ -102,18 +102,16 @@ public class Warehouse_Screen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void received_materialsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_received_materialsActionPerformed
-        this.toBack();
+        this.dispose();
         New_Customer cus = new New_Customer();
         Received_Materials recei = new Received_Materials();
-        recei.setVisible(true);
-        recei.toFront();  
+        recei.setVisible(true); 
     }//GEN-LAST:event_received_materialsActionPerformed
 
     private void issue_materialsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issue_materialsActionPerformed
-        this.toBack();
+        this.dispose();
         Issue_Materials issu = new Issue_Materials();
         issu.setVisible(true);
-        issu.toFront();
     }//GEN-LAST:event_issue_materialsActionPerformed
 
     /**

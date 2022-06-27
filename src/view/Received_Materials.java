@@ -17,7 +17,8 @@ public class Received_Materials extends javax.swing.JFrame {
      * Creates new form Received_Materials
      */
     
-    private String material_id;
+    String material_id;
+    double available_qty = 0;
     
     public Received_Materials() {
         initComponents();
@@ -145,8 +146,9 @@ public class Received_Materials extends javax.swing.JFrame {
         try {
             ResultSet result = new Database_Search().material_id_loading();
             while(result.next()){
-                String nextOrderID = result.getString(1);
-                this.mate_id.addItem(nextOrderID);
+                material_id = result.getString(1);
+                this.mate_id.addItem(material_id);
+                
             }
             Database_Connection.get_Connection_Establish();
         } catch (Exception e) {
@@ -155,21 +157,33 @@ public class Received_Materials extends javax.swing.JFrame {
     }
     
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        this.toBack();
+        this.dispose();
         setVisible(false);
-        new Warehouse_Screen().toFront();
-        new Warehouse_Screen().setState(java.awt.Frame.NORMAL);
+        Warehouse_Screen ware = new Warehouse_Screen();
+        ware.setVisible(true);
     }//GEN-LAST:event_cancelActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
 
-        new WarehouseController().update_material_qty(material_id, Double.parseDouble(this.qty.getText().toString()));
+        double stock = Double.parseDouble(this.qty.getText().toString()) + available_qty;
+        new WarehouseController().update_material_qty(material_id, stock);
         JOptionPane.showMessageDialog(null, "Stock has been Changed!!", "Sucessfull", JOptionPane.INFORMATION_MESSAGE);
        
     }//GEN-LAST:event_saveActionPerformed
 
     private void mate_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mate_idActionPerformed
         material_id = this.mate_id.getSelectedItem().toString();
+        
+        try {
+            ResultSet result = new Database_Search().availability_material_qty(material_id);
+            while(result.next()){
+                String qty = result.getString(5);
+                available_qty = Double.parseDouble(qty);
+            }
+            Database_Connection.get_Connection_Establish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_mate_idActionPerformed
 
     /**

@@ -122,17 +122,15 @@ public class Sales_Screen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void new_customerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_customerActionPerformed
-        this.toBack();
+        this.dispose();
         New_Customer cus = new New_Customer();
         cus.setVisible(true);
-        cus.toFront();
     }//GEN-LAST:event_new_customerActionPerformed
 
     private void new_orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_orderActionPerformed
-        this.toBack();
+        this.dispose();
         New_Order ord = new New_Order();
         ord.setVisible(true);
-        ord.toFront();
     }//GEN-LAST:event_new_orderActionPerformed
 
     /**

@@ -158,10 +158,10 @@ public class New_Customer extends javax.swing.JFrame {
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         
-       this.toBack();
-       setVisible(false);
-       new Sales_Screen().toFront();
-       new Sales_Screen().setState(java.awt.Frame.NORMAL);
+        this.dispose();
+        setVisible(false);
+        Sales_Screen sale = new Sales_Screen();
+        sale.setVisible(true);
     }//GEN-LAST:event_cancelActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed

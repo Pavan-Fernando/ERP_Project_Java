@@ -173,10 +173,10 @@ public class Issue_Materials extends javax.swing.JFrame {
     }//GEN-LAST:event_order_idActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        this.toBack();
+        this.dispose();
         setVisible(false);
-        new Warehouse_Screen().toFront();
-        new Warehouse_Screen().setState(java.awt.Frame.NORMAL);
+        Warehouse_Screen ware = new Warehouse_Screen();
+        ware.setVisible(true);
     }//GEN-LAST:event_cancelActionPerformed
 
     private void issueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issueActionPerformed

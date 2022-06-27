@@ -275,10 +275,10 @@ public class New_Order extends javax.swing.JFrame {
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
 
-        this.toBack();
+        this.dispose();
         setVisible(false);
-        new Sales_Screen().toFront();
-        new Sales_Screen().setState(java.awt.Frame.NORMAL);
+        Sales_Screen sale = new Sales_Screen();
+        sale.setVisible(true);
         
     }//GEN-LAST:event_cancelActionPerformed
 

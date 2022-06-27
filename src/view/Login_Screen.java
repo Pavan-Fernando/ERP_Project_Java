@@ -2,9 +2,8 @@
 package view;
 
 import controller.LoginController;
-import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import model.Database_Search;
+
 
 /**
  *
@@ -40,7 +39,10 @@ public class Login_Screen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(93, 109, 126));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ERP SYSTEM");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -48,29 +50,37 @@ public class Login_Screen extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                .addGap(32, 32, 32))
+                .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(114, 114, 114)
+                .addGap(108, 108, 108)
                 .addComponent(jLabel1)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        jLabel2.setText("Username");
+        jPanel2.setBackground(new java.awt.Color(26, 82, 118));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 0, 14)); // NOI18N
-        jLabel3.setText("Password");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Username  :");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Password   :");
+
+        passwd.setBackground(new java.awt.Color(204, 204, 204));
         passwd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
+        uname.setBackground(new java.awt.Color(204, 204, 204));
         uname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        login.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        login.setBackground(new java.awt.Color(82, 190, 128));
+        login.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
         login.setText("Login");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +88,9 @@ public class Login_Screen extends javax.swing.JFrame {
             }
         });
 
-        cancel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cancel.setBackground(new java.awt.Color(231, 76, 60));
+        cancel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cancel.setForeground(new java.awt.Color(255, 255, 255));
         cancel.setText("Cancel");
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,20 +103,19 @@ public class Login_Screen extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(cancel)
                         .addGap(18, 18, 18)
                         .addComponent(login))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(uname, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(uname, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(passwd))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -123,7 +134,7 @@ public class Login_Screen extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(login)
                     .addComponent(cancel))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,8 +158,32 @@ public class Login_Screen extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
 
-        new LoginController().user_login(this.uname.getText().toString(), this.passwd.getText().toString());
-        
+        String dpt = new LoginController().user_login(this.uname.getText().toString(), this.passwd.getText().toString());
+        this.dispose();
+        if( dpt.equals("Sales") ){
+            Sales_Screen sales = new Sales_Screen();
+            sales.setVisible(true);
+        }
+        else if( dpt.equals("Production") ){
+            Production_Screen production = new Production_Screen();
+            production.setVisible(true);
+         }
+        else if( dpt.equals("Finance") ){
+            Finance_Screen finance = new Finance_Screen();
+            finance.setVisible(true);
+    
+        }
+        else if( dpt.equals("Marketing") ){
+            Marketing_Screen marketing = new Marketing_Screen();
+            marketing.setVisible(true);
+        }
+        else if( dpt.equals("Warehouse") ){
+            Warehouse_Screen ware = new Warehouse_Screen();
+            ware.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Login Failed", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_loginActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed

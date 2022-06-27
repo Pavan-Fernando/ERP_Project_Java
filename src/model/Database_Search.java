@@ -223,4 +223,22 @@ public class Database_Search {
         }
         return result;
     }
+    
+    public ResultSet material_details_prices_and_order_details(Object id) {
+
+        try {
+            String Query = "SELECT opc.ord_id, m.id,  m.name ,m.stock_qty, m.price,\n"
+                    + "SUM(pmc.material_qty * opc.product_qty) AS order_qty, SUM(pmc.material_qty * opc.product_qty) * m.price AS order_price\n"
+                    + "FROM order_product_com opc\n"
+                    + "INNER JOIN product_materials_com pmc ON opc.pdt_id = pmc.pdt_id\n"
+                    + "INNER JOIN material m ON pmc.material_id = m.id\n"
+                    + "WHERE opc.ord_id='"+id+"' GROUP BY m.name ORDER BY m.id;";
+            statement = Database_Connection.get_Connection_Establish();
+            result = statement.executeQuery(Query);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

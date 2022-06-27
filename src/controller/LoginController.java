@@ -5,6 +5,12 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import model.Database_Connection;
 import model.Database_Search;
+import view.Finance_Screen;
+import view.Login_Screen;
+import view.Marketing_Screen;
+import view.Production_Screen;
+import view.Sales_Screen;
+import view.Warehouse_Screen;
 
 /**
  *
@@ -12,24 +18,26 @@ import model.Database_Search;
  */
 public class LoginController {
     
-    public void user_login(String uname, String passwd){     
+    public String user_login(String uname, String passwd){     
         
         try {
             String username = null; 
             String password = null;
-            String department = null;
+            String dpt = null;
             
             ResultSet result = new Database_Search().user_login(uname);
            
             while (result.next()) {
                 username = result.getString(2);  
                 password = result.getString(3); 
+                dpt = result.getString(6);
+                System.out.println(uname + " " + passwd);
+                System.out.println(username + " " + password + " " + dpt);
             }
             if (username != null && password != null) {
                 if (password.equals(passwd)) {
                     System.out.println("Login Successfull");
-//                    Login.getFrames()[1].dispose();
-//                    new Home().setVisible(true);
+                    return dpt;
                 } 
                 else {
                     JOptionPane.showMessageDialog(null, "Please check the credentials", "Error", JOptionPane.ERROR_MESSAGE);
@@ -43,5 +51,8 @@ public class LoginController {
             } catch (Exception e) { 
                 System.out.println(e.toString());
         }
+        return null;
     }
+    
+    
 }

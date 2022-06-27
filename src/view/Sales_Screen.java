@@ -35,10 +35,14 @@ public class Sales_Screen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(93, 109, 126));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sales");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 1, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Department");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -66,7 +70,11 @@ public class Sales_Screen extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(26, 82, 118));
+
+        new_order.setBackground(new java.awt.Color(93, 109, 126));
         new_order.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        new_order.setForeground(new java.awt.Color(255, 255, 255));
         new_order.setText("Add New Order");
         new_order.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +82,9 @@ public class Sales_Screen extends javax.swing.JFrame {
             }
         });
 
+        new_customer.setBackground(new java.awt.Color(93, 109, 126));
         new_customer.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
+        new_customer.setForeground(new java.awt.Color(255, 255, 255));
         new_customer.setText("Add Customer");
         new_customer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,11 +97,11 @@ public class Sales_Screen extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(new_customer, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(new_order, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,17 +132,15 @@ public class Sales_Screen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void new_customerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_customerActionPerformed
-        this.toBack();
+        this.dispose();
         New_Customer cus = new New_Customer();
         cus.setVisible(true);
-        cus.toFront();
     }//GEN-LAST:event_new_customerActionPerformed
 
     private void new_orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_orderActionPerformed
-        this.toBack();
+        this.dispose();
         New_Order ord = new New_Order();
         ord.setVisible(true);
-        ord.toFront();
     }//GEN-LAST:event_new_orderActionPerformed
 
     /**

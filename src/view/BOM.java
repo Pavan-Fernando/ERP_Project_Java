@@ -1,7 +1,7 @@
 
 package view;
 
-import controller.WarehouseController;
+import controller.MRPController;
 import model.Database_Search;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -12,19 +12,14 @@ import model.Database_Connection;
  *
  * @author 
  */
-public class Issue_Materials extends javax.swing.JFrame {
+public class BOM extends javax.swing.JFrame {
 
     /**
-     * Creates new form Issue_Materials
+     * Creates new form BOM
      */
-    
-    String material[][] = new String[10][2];
-    int x = 0;
-    
-    
-    public Issue_Materials() {
+    public BOM() {
         initComponents();
-        order_id_adding();
+        loading_order_id();
     }
 
     /**
@@ -41,33 +36,42 @@ public class Issue_Materials extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         order_id = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
+        bom_table = new javax.swing.JTable();
+        save = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        issue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
-        jLabel1.setText("Issuing Row Materials");
+        jLabel1.setText("Bill of Material");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Order ID");
+        jLabel2.setText("Order_id   :");
 
+        order_id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         order_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 order_idActionPerformed(evt);
             }
         });
 
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        bom_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Material ID", "Name", "Quntity"
+                "Material ID", "Name", "Order Qty (kg)", "Price (kg)"
             }
         ));
-        jScrollPane1.setViewportView(table);
+        jScrollPane1.setViewportView(bom_table);
+
+        save.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        save.setText("Save");
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveActionPerformed(evt);
+            }
+        });
 
         cancel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancel.setText("Cancel");
@@ -77,94 +81,92 @@ public class Issue_Materials extends javax.swing.JFrame {
             }
         });
 
-        issue.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        issue.setText("Issue");
-        issue.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                issueActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(order_id, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(120, 120, 120))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cancel)
-                        .addGap(37, 37, 37)
-                        .addComponent(issue)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(order_id, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(211, 211, 211))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cancel)
+                                .addGap(18, 18, 18)))
+                        .addComponent(save)
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(249, 249, 249))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
+                .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(order_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(issue)
+                    .addComponent(save)
                     .addComponent(cancel))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void order_id_adding(){
+    private void loading_order_id(){
+        
         try {
             ResultSet result = new Database_Search().order_id_loading();
             while(result.next()){
-                String nextOrderID = result.getString(1);
-                this.order_id.addItem(nextOrderID);
+                this.order_id.addItem(result.getString(1));
             }
-            Database_Connection.close_Connection();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     
     private void order_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_order_idActionPerformed
-        try {
-            ResultSet result = new Database_Search().find_material_id_and_name(this.order_id.getSelectedItem().toString());
-            DefaultTableModel tModel = (DefaultTableModel)this.table.getModel();
 
-            while(result.next()){
-                String data[] = {result.getString(1), result.getString(3), result.getString(2)};
-                material[x][0] = result.getString(1);
-                material[x][1] = result.getString(2);
-                tModel.addRow(data);
-                x++;
+        try {
+            ResultSet result = new Database_Search().material_details_prices_and_order_details(this.order_id.getSelectedItem());
+            DefaultTableModel model = (DefaultTableModel) this.bom_table.getModel();
+            
+            while (result.next()) {
+                String row[] = {result.getString(2), result.getString(3), result.getString(6),result.getString(7)};
+                model.addRow(row);
             }
             Database_Connection.close_Connection();
         } catch (Exception e) {
@@ -172,34 +174,27 @@ public class Issue_Materials extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_order_idActionPerformed
 
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+
+        try {
+            ResultSet result = new Database_Search().material_details_prices_and_order_details(this.order_id.getSelectedItem());
+
+            while (result.next()) {
+                new MRPController().update_order_material_com_price(this.order_id.getSelectedItem(), result.getString(2), result.getString(7) );
+            }
+
+            JOptionPane.showMessageDialog(this, "Price is Updated!!");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }//GEN-LAST:event_saveActionPerformed
+
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         this.dispose();
         setVisible(false);
-        Warehouse_Screen ware = new Warehouse_Screen();
-        ware.setVisible(true);
+        Finance_Screen finance = new Finance_Screen();
+        finance.setVisible(true);
     }//GEN-LAST:event_cancelActionPerformed
-
-    private void issueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issueActionPerformed
-        
-        boolean availability_checker = true;
-        boolean temp = true;
-        for(int i=0; i<x; i++){
-            temp = new WarehouseController().check_availability_and_issue(material[i][0], material[i][1]);
-            
-            if(availability_checker){
-                availability_checker = temp;
-            }
-            else{
-                availability_checker = false;
-            }
-        }
-        if(availability_checker){
-            JOptionPane.showMessageDialog(null, "All materials are issued!!", "Sucessfull", JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Materials are not issued!!", "Unsucessfull", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_issueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,32 +213,32 @@ public class Issue_Materials extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Issue_Materials.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BOM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Issue_Materials.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BOM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Issue_Materials.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BOM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Issue_Materials.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BOM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Issue_Materials().setVisible(true);
+                new BOM().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable bom_table;
     private javax.swing.JButton cancel;
-    private javax.swing.JButton issue;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> order_id;
-    private javax.swing.JTable table;
+    private javax.swing.JButton save;
     // End of variables declaration//GEN-END:variables
 }

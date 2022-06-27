@@ -65,6 +65,7 @@ public class Order_MRP_frame extends javax.swing.JFrame {
             }
         });
 
+        cancelBTN.setBackground(new java.awt.Color(231, 76, 60));
         cancelBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN.setText("Cancel");
         cancelBTN.addActionListener(new java.awt.event.ActionListener() {

@@ -250,9 +250,9 @@ public class Moving_Average_frame extends javax.swing.JFrame {
 
         date.setDate(1); // set to 1st day of the month
         c_start.setTime(date);
-        c_start.add(Calendar.MONTH, 1);
+//        c_start.add(Calendar.MONTH, 1);
         this.current_month_lable.setText(new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime()));
-        c_start.add(Calendar.MONTH, -1); // get to the current month 
+//        c_start.add(Calendar.MONTH, -1); // get to the current month 
 
         for (int i = 1; i < 4; i++) {
             c_start.add(Calendar.MONTH, -1);

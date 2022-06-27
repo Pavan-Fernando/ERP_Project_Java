@@ -27,6 +27,7 @@ public class WarehouseController {
                 }
                 else{
                     JOptionPane.showMessageDialog(null, mName + " " + "is not available", "Unsucessfull", JOptionPane.INFORMATION_MESSAGE);
+                    check_available = false;
                 }
             }
         } catch (Exception e) {

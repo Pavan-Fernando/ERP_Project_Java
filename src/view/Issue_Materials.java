@@ -18,7 +18,7 @@ public class Issue_Materials extends javax.swing.JFrame {
      * Creates new form Issue_Materials
      */
     
-    String material[][] = new String[10][2];
+    String material[][] = new String[100][2];
     int x = 0;
     
     
@@ -155,6 +155,8 @@ public class Issue_Materials extends javax.swing.JFrame {
     }
     
     private void order_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_order_idActionPerformed
+        
+        x = 0 ;
         try {
             ResultSet result = new Database_Search().find_material_id_and_name(this.order_id.getSelectedItem().toString());
             DefaultTableModel tModel = (DefaultTableModel)this.table.getModel();
@@ -190,18 +192,15 @@ public class Issue_Materials extends javax.swing.JFrame {
         for(int i=0; i<x; i++){
             temp = new WarehouseController().check_availability_and_issue(material[i][0], material[i][1]);
             
-            if(availability_checker){
-                availability_checker = temp;
-            }
-            else{
+            if(temp != true){
                 availability_checker = false;
             }
         }
-        if(availability_checker){
+        if(availability_checker == true){
             JOptionPane.showMessageDialog(null, "All materials are issued!!", "Sucessfull", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            JOptionPane.showMessageDialog(null, "Materials are not issued!!", "Unsucessfull", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Some Materials are not issued!!", "Unsucessfull", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_issueActionPerformed
 

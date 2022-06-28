@@ -20,8 +20,7 @@ public class Database_Connection {
             
             String url = "jdbc:mysql://localhost:3306/erp_project";
             connnection = DriverManager.getConnection(url, "root", "");
-            statement = connnection.createStatement();
-            System.out.println("success");      
+            statement = connnection.createStatement();    
                  
         } catch (Exception e) {
             

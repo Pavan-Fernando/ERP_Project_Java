@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.ForecastController;
@@ -15,7 +12,7 @@ import model.Database_Search;
 
 /**
  *
- * @author EACMS
+ * @author 
  */
 public class Weighted_moving_a_frame extends javax.swing.JFrame {
 
@@ -84,7 +81,6 @@ public class Weighted_moving_a_frame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Product ID    :");
 
-        producIdCombo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         producIdCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 producIdComboActionPerformed(evt);
@@ -105,16 +101,11 @@ public class Weighted_moving_a_frame extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText(" : ");
 
-        weight_1_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         weight_1_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 weight_1_fieldActionPerformed(evt);
             }
         });
-
-        weight_2_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        weight_3_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         month_1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         month_1.setText(".");
@@ -123,7 +114,6 @@ public class Weighted_moving_a_frame extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Weight");
 
-        cancelBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN.setText("Cancel");
         cancelBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +121,6 @@ public class Weighted_moving_a_frame extends javax.swing.JFrame {
             }
         });
 
-        cancelBTN1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN1.setText("Calculate");
         cancelBTN1.setToolTipText("");
         cancelBTN1.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +248,7 @@ public class Weighted_moving_a_frame extends javax.swing.JFrame {
                     .addComponent(weight_3_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(cancelBTN1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(current_month_lable, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)

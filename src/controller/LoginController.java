@@ -5,12 +5,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import model.Database_Connection;
 import model.Database_Search;
-import view.Finance_Screen;
-import view.Login_Screen;
-import view.Marketing_Screen;
-import view.Production_Screen;
-import view.Sales_Screen;
-import view.Warehouse_Screen;
+
 
 /**
  *

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.MRPController;
@@ -16,7 +13,7 @@ import model.Database_Search;
 
 /**
  *
- * @author EACMS
+ * @author 
  */
 public class Product_plan_Frame extends javax.swing.JFrame {
 
@@ -91,9 +88,6 @@ public class Product_plan_Frame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        material_qty.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        saveBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         saveBTN.setText("Save");
         saveBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,21 +111,18 @@ public class Product_plan_Frame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setText("Plan Product");
 
-        material_id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         material_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 material_idActionPerformed(evt);
             }
         });
 
-        product_id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         product_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 product_idActionPerformed(evt);
             }
         });
 
-        cancelBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN.setText("Cancel");
         cancelBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +139,6 @@ public class Product_plan_Frame extends javax.swing.JFrame {
         product_name_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         product_name_field.setText("Product Name");
 
-        addBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         addBTN.setText("Add Material");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +222,7 @@ public class Product_plan_Frame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(material_qty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(addBTN)
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)

@@ -20,7 +20,7 @@ public class Database_Search {
 
             result = statement.executeQuery(sql);
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
         return result;
     }
@@ -33,7 +33,7 @@ public class Database_Search {
             result = statement.executeQuery(sql);
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
         return result;
     }
@@ -46,7 +46,7 @@ public class Database_Search {
             result = statement.executeQuery(sql);
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
         return result;
     }
@@ -59,7 +59,7 @@ public class Database_Search {
             result = statement.executeQuery(sql);
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
         return result;
     }
@@ -74,7 +74,7 @@ public class Database_Search {
             result = statement.executeQuery(sql);
 
         } catch (Exception e) {
-            System.out.println("data eee" + e.toString());
+            e.printStackTrace();
         }
         return result;
     }
@@ -87,7 +87,7 @@ public class Database_Search {
             result = statement.executeQuery(sql);
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
         return result;
     }
@@ -100,7 +100,7 @@ public class Database_Search {
             result = statement.executeQuery(sql);
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
         return result;
     }
@@ -175,8 +175,10 @@ public class Database_Search {
 
     public ResultSet find_material_id_and_name(String order_id) {
         try {
-            String Query = "SELECT om.material_id, om.material_qty, m.name FROM order_material_com om INNER JOIN "
-                    + "material m ON om.material_id = m.id WHERE om.ord_id = '" + order_id + "'";
+            String Query = "SELECT order_material_com.material_id, order_material_com.material_qty, material.name "
+                    + "FROM order_material_com  "
+                    + "INNER JOIN material ON order_material_com.material_id = material.id "
+                    + "WHERE order_material_com.ord_id = '"+order_id+"'";
             statement = Database_Connection.get_Connection_Establish();
             result = statement.executeQuery(Query);
 
@@ -227,12 +229,15 @@ public class Database_Search {
     public ResultSet material_details_prices_and_order_details(Object id) {
 
         try {
-            String Query = "SELECT opc.ord_id, m.id,  m.name ,m.stock_qty, m.price,\n"
-                    + "SUM(pmc.material_qty * opc.product_qty) AS order_qty, SUM(pmc.material_qty * opc.product_qty) * m.price AS order_price\n"
-                    + "FROM order_product_com opc\n"
-                    + "INNER JOIN product_materials_com pmc ON opc.pdt_id = pmc.pdt_id\n"
-                    + "INNER JOIN material m ON pmc.material_id = m.id\n"
-                    + "WHERE opc.ord_id='"+id+"' GROUP BY m.name ORDER BY m.id;";
+            
+            String Query = "SELECT order_product_com.ord_id, material.id,  material.name ,material.stock_qty, material.price, "
+                    + "SUM(product_materials_com.material_qty * order_product_com.product_qty) AS order_qty, "
+                    + "SUM(product_materials_com.material_qty * order_product_com.product_qty) * material.price AS order_price "
+                    + "FROM order_product_com "
+                    + "INNER JOIN product_materials_com ON order_product_com.pdt_id = product_materials_com.pdt_id "
+                    + "INNER JOIN material ON product_materials_com.material_id = material.id "
+                    + "WHERE order_product_com.ord_id='"+id+"' GROUP BY material.name ORDER BY material.id";
+            
             statement = Database_Connection.get_Connection_Establish();
             result = statement.executeQuery(Query);
 

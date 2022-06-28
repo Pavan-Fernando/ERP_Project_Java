@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.ForecastController;
@@ -14,7 +11,7 @@ import model.Database_Search;
 
 /**
  *
- * @author EACMS
+ * @author 
  */
 public class Moving_Average_frame extends javax.swing.JFrame {
 
@@ -69,7 +66,6 @@ public class Moving_Average_frame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        producIdCombo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         producIdCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 producIdComboActionPerformed(evt);
@@ -105,7 +101,6 @@ public class Moving_Average_frame extends javax.swing.JFrame {
         sales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sales.setText("0");
 
-        cancelBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN.setText("Cancel");
         cancelBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +215,7 @@ public class Moving_Average_frame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(m3_lable)
                     .addComponent(sale_3_lable))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(current_month_lable, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
@@ -251,7 +246,7 @@ public class Moving_Average_frame extends javax.swing.JFrame {
         date.setDate(1);
         c_start.setTime(date);
 
-        this.current_month_lable.setText(new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime()));
+        this.current_month_lable.setText(new SimpleDateFormat("MMMM").format(c_start.getTime()));
         c_start.add(Calendar.MONTH, -1);
 
         for (int i = 1; i < 4; i++) {
@@ -263,7 +258,7 @@ public class Moving_Average_frame extends javax.swing.JFrame {
 
             months_sales[i - 1] = forecastController.get_soled_items_for_month(this.producIdCombo.getSelectedItem(), month_start, month_end);
 
-            String currentDate2 = new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime());
+            String currentDate2 = new SimpleDateFormat("MMMM").format(c_start.getTime());
             c_start.add(Calendar.MONTH, -1);
             months[i - 1] = currentDate2;
         }

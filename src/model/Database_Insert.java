@@ -12,13 +12,15 @@ public class Database_Insert {
 
     public void insert_to_Order_material(String order_id, String material_id, String order_material_total_qty, String order_material_total_price) {
         try {
+            
             statement = Database_Connection.get_Connection_Establish();
             String sql = "INSERT INTO order_material_com (ord_id , material_id, material_qty, price) VALUES ('" + order_id + "', '" + material_id + "', '" + order_material_total_qty + "', '" + order_material_total_price + "')";
             statement.executeUpdate(sql);
             Database_Connection.close_Connection();
+            
         } catch (Exception e) {
             System.out.println("error in order_rawmaterial");
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
 
     }
@@ -54,7 +56,8 @@ public class Database_Insert {
 
         try {
             statement = Database_Connection.get_Connection_Establish();
-            String Query = "INSERT INTO customer (name, email, phone) VALUES ('" + name + "', '" + email + "', '" + phone + "')";
+            String Query = "INSERT INTO customer (name, email, phone) "
+                    + "VALUES ('" + name + "', '" + email + "', '" + phone + "')";
             statement.executeUpdate(Query);
 
             Database_Connection.close_Connection();
@@ -67,7 +70,8 @@ public class Database_Insert {
 
         try {
             statement = Database_Connection.get_Connection_Establish();
-            String Query = "INSERT INTO product (name, price) VALUES ('" + product_name + "',  '" + price + "')";
+            String Query = "INSERT INTO product (name, price) "
+                    + "VALUES ('" + product_name + "',  '" + price + "')";
             statement.executeUpdate(Query);
 
             Database_Connection.close_Connection();
@@ -80,7 +84,8 @@ public class Database_Insert {
 
         try {
             statement = Database_Connection.get_Connection_Establish();
-            String Query = "INSERT INTO material (name, price, unit, stock_qty) VALUES ('" + material_name + "', '" + price_per_unit + "', '" + material_unit + "', '" + stock_quantity + "')";
+            String Query = "INSERT INTO material (name, price, unit, stock_qty) "
+                    + "VALUES ('" + material_name + "', '" + price_per_unit + "', '" + material_unit + "', '" + stock_quantity + "')";
             statement.executeUpdate(Query);
 
             Database_Connection.close_Connection();
@@ -91,12 +96,15 @@ public class Database_Insert {
 
     public void insert_Materials_to_product_table(String product_id, String material_id, String qty) {
         try {
+            
             statement = Database_Connection.get_Connection_Establish();
-            String sql = "INSERT INTO product_materials_com (pdt_id, 	material_id, material_qty) VALUES ('" + product_id + "', '" + material_id + "', '" + qty + "')";
+            String sql = "INSERT INTO product_materials_com (pdt_id, 	material_id, material_qty) "
+                    + "VALUES ('" + product_id + "', '" + material_id + "', '" + qty + "')";
             statement.executeUpdate(sql);
+            
             Database_Connection.close_Connection();
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
     }
 }

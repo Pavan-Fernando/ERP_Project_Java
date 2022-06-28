@@ -136,7 +136,7 @@
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="cancelBTN1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="current_month_lable" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -171,9 +171,6 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="producIdCombo">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
         </Property>
@@ -224,28 +221,13 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="weight_1_field">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="weight_1_fieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="weight_2_field">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="weight_3_field">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="month_1">
       <Properties>
@@ -266,9 +248,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="cancelBTN">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
       <Events>
@@ -277,9 +256,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="cancelBTN1">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Calculate"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>

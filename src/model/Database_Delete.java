@@ -18,7 +18,7 @@ public class Database_Delete {
             Database_Connection.close_Connection();
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
 
     }

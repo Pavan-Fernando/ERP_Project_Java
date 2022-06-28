@@ -98,10 +98,8 @@ public class Moving_Average_frame extends javax.swing.JFrame {
         jLabel10.setText("Sales Qty");
 
         current_month_lable.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        current_month_lable.setForeground(new java.awt.Color(0, 204, 204));
 
         sales.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        sales.setForeground(new java.awt.Color(0, 204, 204));
         sales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sales.setText("0");
 
@@ -251,7 +249,7 @@ public class Moving_Average_frame extends javax.swing.JFrame {
         date.setDate(1);
         c_start.setTime(date);
 
-        this.current_month_lable.setText(new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime()));
+        this.current_month_lable.setText(new SimpleDateFormat("MMMM").format(c_start.getTime()));
         c_start.add(Calendar.MONTH, -1);
 
         for (int i = 1; i < 4; i++) {
@@ -263,7 +261,7 @@ public class Moving_Average_frame extends javax.swing.JFrame {
 
             months_sales[i - 1] = forecastController.get_soled_items_for_month(this.producIdCombo.getSelectedItem(), month_start, month_end);
 
-            String currentDate2 = new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime());
+            String currentDate2 = new SimpleDateFormat("MMMM").format(c_start.getTime());
             c_start.add(Calendar.MONTH, -1);
             months[i - 1] = currentDate2;
         }

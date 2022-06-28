@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.ForecastController;
@@ -14,7 +11,7 @@ import model.Database_Search;
 
 /**
  *
- * @author EACMS
+ * @author 
  */
 public class Moving_Average_frame extends javax.swing.JFrame {
 
@@ -69,7 +66,6 @@ public class Moving_Average_frame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        producIdCombo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         producIdCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 producIdComboActionPerformed(evt);
@@ -103,7 +99,6 @@ public class Moving_Average_frame extends javax.swing.JFrame {
         sales.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sales.setText("0");
 
-        cancelBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN.setText("Cancel");
         cancelBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,7 +213,7 @@ public class Moving_Average_frame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(m3_lable)
                     .addComponent(sale_3_lable))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(current_month_lable, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.MRPController;
@@ -9,7 +6,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author EACMS
+ * @author 
  */
 public class New_product extends javax.swing.JFrame {
 
@@ -39,15 +36,12 @@ public class New_product extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        saveBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         saveBTN.setText("Save");
         saveBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBTNActionPerformed(evt);
             }
         });
-
-        product_name_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         product_price.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
         product_price.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -60,7 +54,6 @@ public class New_product extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText(" Name :");
 
-        cancelBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN.setText("Cancel");
         cancelBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +102,7 @@ public class New_product extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveBTN)
                     .addComponent(cancelBTN))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(117, 117, 117)
@@ -117,10 +110,10 @@ public class New_product extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addComponent(product_name_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(product_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(94, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(product_price, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addContainerGap(104, Short.MAX_VALUE)))
         );
 
         pack();

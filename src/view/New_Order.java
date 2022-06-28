@@ -70,7 +70,6 @@ public class New_Order extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Quantity       :");
 
-        add.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         add.setText("Add");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +87,6 @@ public class New_Order extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(order_table);
 
-        save.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         save.setText("Save");
         save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +94,6 @@ public class New_Order extends javax.swing.JFrame {
             }
         });
 
-        cancel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancel.setText("Cancel");
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package view;
 
 import controller.MRPController;
@@ -13,7 +10,7 @@ import model.Database_Search;
 
 /**
  *
- * @author EACMS
+ * @author 
  */
 public class Order_MRP_frame extends javax.swing.JFrame {
 
@@ -58,15 +55,12 @@ public class Order_MRP_frame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        orderID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         orderID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orderIDActionPerformed(evt);
             }
         });
 
-        cancelBTN.setBackground(new java.awt.Color(231, 76, 60));
-        cancelBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancelBTN.setText("Cancel");
         cancelBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +68,6 @@ public class Order_MRP_frame extends javax.swing.JFrame {
             }
         });
 
-        saveBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         saveBTN.setText("Save");
         saveBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +129,7 @@ public class Order_MRP_frame extends javax.swing.JFrame {
                     .addComponent(orderID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveBTN)
                     .addComponent(cancelBTN))

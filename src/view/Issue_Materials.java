@@ -69,7 +69,6 @@ public class Issue_Materials extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        cancel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cancel.setText("Cancel");
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +76,6 @@ public class Issue_Materials extends javax.swing.JFrame {
             }
         });
 
-        issue.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         issue.setText("Issue");
         issue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

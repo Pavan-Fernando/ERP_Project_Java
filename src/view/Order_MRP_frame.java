@@ -30,13 +30,13 @@ public class Order_MRP_frame extends javax.swing.JFrame {
             ResultSet result = new Database_Search().order_id_loading();
             while (result.next()) {
                 String nextOrderID = result.getString(1);
-                 this.orderID.addItem(nextOrderID);
+                this.orderID.addItem(nextOrderID);
             }
             Database_Connection.close_Connection();
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-              
+
     }
 
     /**
@@ -149,10 +149,10 @@ public class Order_MRP_frame extends javax.swing.JFrame {
     private void orderIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderIDActionPerformed
         //clear table data
 
-       fill_material_details(this.orderID.getSelectedItem().toString());
+        fill_material_details(this.orderID.getSelectedItem().toString());
     }//GEN-LAST:event_orderIDActionPerformed
 
-     private void fill_material_details(String order_id) {
+    private void fill_material_details(String order_id) {
         try {
             ResultSet result = new Database_Search().get_Material_Details_According_to_OrderId(order_id);
             DefaultTableModel model = (DefaultTableModel) material_table.getModel();
@@ -160,20 +160,18 @@ public class Order_MRP_frame extends javax.swing.JFrame {
                 model.removeRow(0);
             }
             while (result.next()) {
-                Object[] row = { result.getString(3), result.getString(5)};
-//have to add details to the database
+                Object[] row = {result.getString(2), result.getString(4)};
                 model.addRow(row);
             }
-
-               Database_Connection.close_Connection();
+            Database_Connection.close_Connection();
         } catch (Exception e) {
             System.out.println(e.toString());
         }
     }
-    
-    
+
+
     private void cancelBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBTNActionPerformed
-         this.dispose();
+        this.dispose();
         Production_Screen production_Screen = new Production_Screen();
         production_Screen.setVisible(true);
 
@@ -184,7 +182,7 @@ public class Order_MRP_frame extends javax.swing.JFrame {
             ResultSet result = new Database_Search().get_Material_Details_According_to_OrderId(this.orderID.getSelectedItem().toString());
 
             while (result.next()) {
-                MRPController.insert_to_Order_material(this.orderID.getSelectedItem().toString(), result.getString(2), result.getString(5), "");
+                MRPController.insert_to_Order_material(this.orderID.getSelectedItem().toString(), result.getString(1), result.getString(4), "");
             }
 
             JOptionPane.showMessageDialog(this, "Data added!!");

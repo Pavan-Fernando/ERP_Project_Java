@@ -28,7 +28,7 @@ public class Database_Search {
     public ResultSet get_Material_Details_According_to_OrderId(Object id) {
 
         try {
-            String sql = "SELECT order_product_com.ord_id, material.id, material.name, material.stock_qty, SUM( product_materials_com.material_qty * order_product_com.product_qty ) AS qty_for_order FROM order_product_com INNER JOIN product_materials_com ON order_product_com.pdt_id = product_materials_com.pdt_id INNER JOIN product ON order_product_com.pdt_id = product.id INNER JOIN material ON product_materials_com.material_id = material.id WHERE order_product_com.ord_id = '" + id + "' GROUP BY material.name ORDER BY material.id;";
+            String sql = "SELECT  material.id, material.name, material.stock_qty, SUM( product_materials_com.material_qty * order_product_com.product_qty ) AS total_q FROM order_product_com INNER JOIN product_materials_com ON order_product_com.pdt_id = product_materials_com.pdt_id INNER JOIN product ON order_product_com.pdt_id = product.id INNER JOIN material ON product_materials_com.material_id = material.id WHERE order_product_com.ord_id = '" + id + "' GROUP BY material.name ORDER BY material.id;";
             statement = Database_Connection.get_Connection_Establish();
             result = statement.executeQuery(sql);
 

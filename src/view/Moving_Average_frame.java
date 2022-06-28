@@ -245,22 +245,15 @@ public class Moving_Average_frame extends javax.swing.JFrame {
         double[] months_sales = new double[3];
         ForecastController forecastController = new ForecastController();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date(); //todays date
-        Calendar c_start = Calendar.getInstance();    //calender start date    
+        Date date = new Date();
+        Calendar c_start = Calendar.getInstance();
 
-        date.setDate(1); // set to 1st day of the month
+        date.setDate(1);
         c_start.setTime(date);
-<<<<<<< HEAD
-//        c_start.add(Calendar.MONTH, 1);
-        this.current_month_lable.setText(new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime()));
-//        c_start.add(Calendar.MONTH, -1); // get to the current month 
 
-=======
-        // c_start.add(Calendar.MONTH, 1);
         this.current_month_lable.setText(new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime()));
-        // c_start.add(Calendar.MONTH, -1); // get to the current month 
         c_start.add(Calendar.MONTH, -1);
->>>>>>> f4eaedf55677c604683d539678bfcc08adf46c1a
+
         for (int i = 1; i < 4; i++) {
             c_start.add(Calendar.MONTH, -1);
             String month_start = dateFormat.format(c_start.getTime());
@@ -268,7 +261,6 @@ public class Moving_Average_frame extends javax.swing.JFrame {
             c_start.add(Calendar.MONTH, 1);
             String month_end = dateFormat.format(c_start.getTime());
 
-            // calling database
             months_sales[i - 1] = forecastController.get_soled_items_for_month(this.producIdCombo.getSelectedItem(), month_start, month_end);
 
             String currentDate2 = new SimpleDateFormat("yyyy-MMMM").format(c_start.getTime());

@@ -181,7 +181,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="32" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Product Plan"/>
+        <Property name="text" type="java.lang.String" value="Plan Product"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="material_id">

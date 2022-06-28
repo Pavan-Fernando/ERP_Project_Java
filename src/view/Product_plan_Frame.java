@@ -115,7 +115,7 @@ public class Product_plan_Frame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(selectedProductTable);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
-        jLabel1.setText("Product Plan");
+        jLabel1.setText("Plan Product");
 
         material_id.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         material_id.addActionListener(new java.awt.event.ActionListener() {
